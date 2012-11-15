@@ -13,9 +13,22 @@ export TERM=xterm-color
 alias ls='ls -G'
 alias ll='ls -hl'
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+# include some more aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# linuxish
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# macish
+
+if [ -f `brew --prefix`/etc/bash_completion ] && which brew > /dev/null ; then
     . `brew --prefix`/etc/bash_completion
 fi
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
