@@ -25,7 +25,7 @@ fi
 
 # macish
 
-if [ -f `brew --prefix`/etc/bash_completion ] && which brew > /dev/null ; then
+if which brew > /dev/null &&  [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
