@@ -6,7 +6,7 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export LIBRETTO_HOME=~/libretto
 
-export PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]$(__git_ps1 " (%s)") \$ '
+export PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;36m\]\W\[\033[00m\]$(__git_ps1 " (%s)") \$ '
 #enables color for iTerm
 export TERM=xterm-color
 #sets up proper alias commands when called
