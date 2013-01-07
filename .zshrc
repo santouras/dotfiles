@@ -37,4 +37,4 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/santouras/.rbenv/shims:/Users/santouras/.rbenv/shims:/Users/santouras/.rbenv/bin:/Users/santouras/bin:/usr/local/bin:/usr/local/mysql/bin:/Users/santouras/.rbenv/shims:/Users/santouras/.rbenv/shims:/Users/santouras/.rbenv/bin:/Users/santouras/bin:/usr/local/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin
+export PATH=~/.rbenv/shims:~/.rbenv/bin:~/bin:/usr/local/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin
