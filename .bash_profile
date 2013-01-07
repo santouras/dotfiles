@@ -1,5 +1,5 @@
 #export
-PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
+PATH=~/.rbenv/shims:~/.rbenv/bin:~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 export EDITOR=vim
 
 export CLICOLOR=1
