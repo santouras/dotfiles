@@ -1,3 +1,10 @@
+# what OS are we using
+case "$OSTYPE" in
+  darwin*)  OS="OSX" ;; 
+  linux*)   OS="LINUX" ;;
+esac
+
+
 #export
 PATH=~/.rbenv/shims:~/.rbenv/bin:~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 export EDITOR=vim
@@ -19,13 +26,14 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # linuxish
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+# if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+if [ "$OS" = "LINUX" ]; then
     . /etc/bash_completion
 fi
 
 # macish
-
-if which brew > /dev/null &&  [ -f `brew --prefix`/etc/bash_completion ]; then
+# if which brew > /dev/null &&  [ -f `brew --prefix`/etc/bash_completion ]; then
+if [ "$OS" = "OSX" ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
