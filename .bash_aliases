@@ -2,7 +2,7 @@
 alias be='bundle exec'
 alias bi='bundle install'
 alias br='be rake'
-
+alias bs='be rspec'
 
 alias ll='ls -hl'
 
