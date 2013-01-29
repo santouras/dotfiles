@@ -1,6 +1,8 @@
 # rails shiz
 alias be='bundle exec'
 alias bi='bundle install'
+alias br='be rake'
+
 
 alias ll='ls -hl'
 
