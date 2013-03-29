@@ -36,7 +36,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-
+source ~/.bash_aliases
 
 # Customize to your needs...
 MYSQL=/usr/local/mysql/bin
