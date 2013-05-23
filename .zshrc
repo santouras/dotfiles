@@ -38,6 +38,10 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.bash_aliases
 
+# autocorrect is killing me
+unsetopt correct
+unsetopt correct_all
+
 # Customize to your needs...
 MYSQL=/usr/local/mysql/bin
 export PATH=$PATH:$MYSQL
