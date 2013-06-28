@@ -11,9 +11,17 @@ set noswapfile
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" Indent with two spaces
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+" Show line numbers
+set number
+
+" Smart indenting when starting new line
+set smartindent
 
 set ruler
 set ignorecase
