@@ -3,6 +3,8 @@ syntax enable
 colorscheme desert
 set background=dark
 
+set nocompatible
+
 " no backups!
 set nobackup
 set nowb
@@ -17,8 +19,11 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-" Show line numbers
-set number
+" Show relative line numbers
+set relativenumber
+
+" columns
+set ruler
 
 " Smart indenting when starting new line
 set smartindent
