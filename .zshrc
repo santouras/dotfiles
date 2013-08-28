@@ -1,16 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# what OS are we using
-case "$OSTYPE" in
-  darwin*)  OS="OSX" ;;
-  linux*)   OS="LINUX" ;;
-esac
-
-
-#export
-export EDITOR=vim
-
 # fixes bizarre gap in some combinations of iTerm/zsh/tmux
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
