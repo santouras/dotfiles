@@ -1,0 +1,16 @@
+# common betwen zsh and bash
+
+# what OS are we using
+case "$OSTYPE" in
+  darwin*)  OS="OSX" ;; 
+  linux*)   OS="LINUX" ;;
+esac
+
+export EDITOR=vim
+
+# Customize to your needs...
+MYSQL=/usr/local/mysql/bin
+export PATH=$PATH:$MYSQL
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+export PATH=~/.rbenv/shims:~/.rbenv/bin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:$PATH

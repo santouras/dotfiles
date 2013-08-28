@@ -36,15 +36,11 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# common between shells
+source ~/.shell_common
+
 source ~/.bash_aliases
 
 # autocorrect is killing me
 unsetopt correct
 unsetopt correct_all
-
-# Customize to your needs...
-MYSQL=/usr/local/mysql/bin
-export PATH=$PATH:$MYSQL
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
-
-export PATH=~/.rbenv/shims:~/.rbenv/bin:~/bin:/usr/local/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin
