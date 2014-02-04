@@ -8,6 +8,11 @@ esac
 
 export EDITOR=vim
 
+# if we have something special to this machine
+if [ -f ~/.shell_local ];then
+  . ~/.shell_local
+fi
+
 # Customize to your needs...
 MYSQL=/usr/local/mysql/bin
 export PATH=$PATH:$MYSQL
