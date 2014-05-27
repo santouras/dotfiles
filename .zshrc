@@ -9,7 +9,7 @@ export LANG=en_US.UTF-8
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="kafeitu"
+# ZSH_THEME="kafeitu"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -39,6 +39,13 @@ ZSH_THEME="kafeitu"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+PROMPT='%{$fg_bold[green]%}➜ %{$fg[yellow]%}%n %{$fg[cyan]%}%~ %{$fg[green]%}%# %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="±(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[white]%}✗%{$fg[blue]%})%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 # common between shells
 source ~/.shell_common
