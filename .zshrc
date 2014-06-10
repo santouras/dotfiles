@@ -55,3 +55,7 @@ source ~/.bash_aliases
 # autocorrect is killing me
 unsetopt correct
 unsetopt correct_all
+
+# use bash style ctrl+u
+bindkey \^U backward-kill-line
+
