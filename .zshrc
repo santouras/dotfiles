@@ -40,8 +40,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-PROMPT='%{$fg[yellow]%}%n %{$fg[cyan]%}%~ %{$fg[green]%}%# %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}
-%{$fg_bold[green]%}➜  %{$reset_color%}'
+PROMPT='%{$fg[yellow]%}%n %{$fg[cyan]%}%~ %{$fg[green]%}%# %{$fg_bold[blue]%}$(git_prompt_info)
+%{$fg_bold[red]%} %(?..[%?] ) %{$fg_bold[green]%}➜  %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="±(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
