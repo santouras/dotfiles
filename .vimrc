@@ -10,11 +10,16 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'chriskempson/base16-vim'
 
+Plugin 'bling/vim-airline'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 
 syntax enable
+
+" Needed for airline to show the status bar
+set laststatus=2
 
 colorscheme base16-default
 set background=dark
