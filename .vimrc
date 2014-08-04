@@ -12,11 +12,19 @@ Plugin 'chriskempson/base16-vim'
 
 Plugin 'bling/vim-airline'
 
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'scrooloose/nerdtree'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 
 syntax enable
+
+" CtrlP settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Needed for airline to show the status bar
 set laststatus=2
