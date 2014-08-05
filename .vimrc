@@ -28,6 +28,9 @@ syntax enable
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" open NERDtree with ctrl+n
+map <C-n> :NERDTreeToggle<CR>
+
 " Needed for airline to show the status bar
 set laststatus=2
 
