@@ -34,6 +34,9 @@ map <C-n> :NERDTreeToggle<CR>
 " Needed for airline to show the status bar
 set laststatus=2
 
+" set airline theme
+:let g:airline_theme='wombat'
+
 colorscheme base16-default
 set background=dark
 
