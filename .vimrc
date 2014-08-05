@@ -18,6 +18,8 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'editorconfig/editorconfig-vim'
 
+Plugin 'tpope/vim-fugitive'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
