@@ -20,6 +20,8 @@ Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'mileszs/ack.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -56,8 +58,8 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-" Show relative line numbers
-set relativenumber
+" Show line numbers
+set number
 
 " columns
 set ruler
