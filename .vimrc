@@ -51,6 +51,11 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-default
 set background=dark
 
+" Highlight our whitespace
+highlight ExtraWhitespace ctermbg=DarkGray guibg=DarkGray
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+\%#\@<!$/
+
 " no backups!
 set nobackup
 set nowb
