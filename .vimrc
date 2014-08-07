@@ -44,6 +44,10 @@ set laststatus=2
 " vim.ack should use ag
 :let g:ackprg = 'ag --nogroup --nocolor --column'
 
+set t_Co=256
+let base16colorspace=256  " Access colors present in 256 colorspace
+
+" set the colour scheme
 colorscheme base16-default
 set background=dark
 
