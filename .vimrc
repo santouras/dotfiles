@@ -78,6 +78,10 @@ set relativenumber
 " columns
 set ruler
 
+" split right/below
+set splitbelow
+set splitright
+
 " remove ctrl+w from split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
