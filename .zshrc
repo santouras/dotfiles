@@ -53,6 +53,11 @@ source ~/.shell_common
 
 source ~/.bash_aliases
 
+# include some things if found locally
+if [ -f ~/.bash_local ]; then
+  . ~/.bash_local
+fi
+
 # autocorrect is killing me
 unsetopt correct
 unsetopt correct_all

@@ -16,6 +16,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# include some things if found locally
+if [ -f ~/.bash_local ]; then
+  . ~/.bash_local
+fi
+
 # linuxish
 # if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 if [ "$OS" = "LINUX" ]; then
