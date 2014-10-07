@@ -58,6 +58,9 @@ highlight ExtraWhitespace ctermbg=DarkGray guibg=DarkGray
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
+hi WhiteSpaces gui=undercurl guifg=LightGray
+match WhiteSpaces / \+/
+
 " no backups!
 set nobackup
 set nowb
