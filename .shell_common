@@ -21,4 +21,8 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export PATH=~/.rbenv/shims:~/.rbenv/bin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:$PATH
 
 # envswitch
-eval "$(envswitch -I)"
+if command -v envswitch > /dev/null
+then
+  eval "$(envswitch -I)"
+fi
+
