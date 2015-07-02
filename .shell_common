@@ -18,11 +18,18 @@ MYSQL=/usr/local/mysql/bin
 export PATH=$PATH:$MYSQL
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
-export PATH=~/.rbenv/shims:~/.rbenv/bin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:$PATH
-
+export PATH=~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:$PATH
 # envswitch
 if command -v envswitch > /dev/null
 then
   eval "$(envswitch -I)"
+fi
+
+# rbenv
+if [ -d ~/.rbenv ]
+then
+  export PATH=~/.rbenv/shims:~/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
 
