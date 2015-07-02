@@ -1,0 +1,24 @@
+[user]
+	name = Jude Aakjaer
+	email = santouras@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+[color]
+	ui = true
+[alias]
+	lc = log ORIG_HEAD.. --stat --no-merges
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	lt = log --graph --oneline --decorate --all
+	st = status
+	ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  who = shortlog -s --
+[push]
+	default = current
+[include]
+  path = ~/.gitconfig_local
