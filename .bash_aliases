@@ -1,3 +1,7 @@
+# docker things
+alias d='docker'
+alias dc='docker-compose'
+
 # rails shiz
 alias be='bundle exec'
 alias bi='bundle install'
