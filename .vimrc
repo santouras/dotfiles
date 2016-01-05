@@ -24,6 +24,8 @@ Plugin 'mileszs/ack.vim'
 
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'ekalinin/Dockerfile.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
