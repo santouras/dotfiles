@@ -1,6 +1,8 @@
 # docker things
 alias d='docker'
 alias dc='docker-compose'
+alias dcr='dc run --rm'
+de () { d exec -ti $(dc ps -q "$1") "${@:2}"; }
 
 # rails shiz
 alias be='bundle exec'
