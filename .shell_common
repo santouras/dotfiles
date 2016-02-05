@@ -33,3 +33,5 @@ then
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
 
+# FZF
+export FZF_DEFAULT_COMMAND='ag -g ""'
