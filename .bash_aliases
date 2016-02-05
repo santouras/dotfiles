@@ -2,6 +2,9 @@
 alias d='docker'
 alias dc='docker-compose'
 alias dcr='dc run --rm'
+alias db='dcr app bundle exec'
+alias dbr='db rake'
+alias dt='dcr -e "RAILS_ENV=test" -e "RACK_ENV=test" app bundle exec rspec'
 de () { d exec -ti $(dc ps -q "$1") "${@:2}"; }
 
 # rails shiz
@@ -23,5 +26,4 @@ else
 	#sets up proper alias commands when called
 	alias ls='ls -G'
 fi
-
 
