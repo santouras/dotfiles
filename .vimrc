@@ -12,8 +12,6 @@ Plugin 'chriskempson/base16-vim'
 
 Plugin 'bling/vim-airline'
 
-Plugin 'kien/ctrlp.vim'
-
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'editorconfig/editorconfig-vim'
@@ -26,15 +24,16 @@ Plugin 'airblade/vim-gitgutter'
 
 Plugin 'ekalinin/Dockerfile.vim'
 
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" remap leader to `
+:let mapleader = "`"
 
 syntax enable
-
-" CtrlP settings
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
 " open NERDtree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
@@ -46,7 +45,9 @@ set laststatus=2
 :let g:airline_theme='wombat'
 
 " vim.ack should use ag
-:let g:ackprg = 'ag --nogroup --nocolor --column'
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
 
 set t_Co=256
 let base16colorspace=256  " Access colors present in 256 colorspace
@@ -79,6 +80,7 @@ set shiftwidth=2
 
 " Show relative line numbers
 set relativenumber
+set number
 
 " columns
 set ruler
@@ -109,4 +111,7 @@ set mouse=a
 " Resize split panes with mouse within tmux.
 " Also get live-updated text selection with mouse drag.
 set ttymouse=xterm2
+
+" fzf integration
+map <leader>t :FZF<CR>
 
