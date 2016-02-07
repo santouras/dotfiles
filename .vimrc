@@ -64,6 +64,9 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 hi WhiteSpaces gui=undercurl guifg=LightGray
 match WhiteSpaces / \+/
 
+" reload files
+set autoread
+
 " no backups!
 set nobackup
 set nowb
@@ -113,5 +116,5 @@ set mouse=a
 set ttymouse=xterm2
 
 " fzf integration
-map <leader>t :FZF<CR>
+map <c-p> :FZF<CR>
 
