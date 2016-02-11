@@ -18,7 +18,11 @@ Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'tpope/vim-commentary'
+
 Plugin 'mileszs/ack.vim'
+
+Plugin 'matze/vim-move'
 
 Plugin 'airblade/vim-gitgutter'
 
@@ -41,8 +45,19 @@ map <C-n> :NERDTreeToggle<CR>
 " Needed for airline to show the status bar
 set laststatus=2
 
+" Use C as move modifier
+let g:move_key_modifier = 'C'
+
 " set airline theme
 :let g:airline_theme='wombat'
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline#extensions#tabline#show_buffers = 1
+
+" Show just the filename
+" let g:airline#extensions#tabline#fnamemod = ':t'
 
 " vim.ack should use ag
 if executable('ag')
@@ -66,6 +81,9 @@ match WhiteSpaces / \+/
 
 " reload files
 set autoread
+
+" use hidden buffers
+set hidden
 
 " no backups!
 set nobackup
@@ -93,10 +111,10 @@ set splitbelow
 set splitright
 
 " remove ctrl+w from split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 
 " Smart indenting when starting new line
 set smartindent
