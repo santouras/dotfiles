@@ -136,3 +136,7 @@ set ttymouse=xterm2
 " fzf integration
 map <c-p> :FZF<CR>
 
+" Make tabs and trailing spaces visible when `list` is set.
+set listchars=tab:>-,trail:-
+set list
+
