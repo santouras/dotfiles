@@ -5,6 +5,9 @@ ZSH=$HOME/.oh-my-zsh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Set zsh to use xterm
+export TERM=xterm-256color
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -64,11 +67,5 @@ unsetopt correct_all
 
 # use bash style ctrl+u
 bindkey \^U backward-kill-line
-
-# Base16 Shell
-BASE16_SCHEME="eighties"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
