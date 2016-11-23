@@ -1,6 +1,7 @@
 [user]
 	name = Jude Aakjaer
 	email = santouras@gmail.com
+	signingkey = 9D04A05727BB8F6F
 [core]
 	excludesfile = ~/.gitignore_global
 [color]
@@ -22,3 +23,5 @@
 	default = current
 [include]
   path = ~/.gitconfig_local
+[commit]
+	gpgsign = true
