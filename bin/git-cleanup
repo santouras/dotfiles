@@ -3,12 +3,33 @@
 # Removes local branches that have been merged into master
 # @author Jude Aakjaer
 
-BRANCHES=$(git branch --merged | grep -v "\*")
+prune_merged ()
+{
+  BRANCHES=$(git branch --merged | grep -v "\*")
 
-if [ $? -ne 0 ]; then
-  echo "No branches to cleanup"
-  exit 0
-fi
+  if [ $? -ne 0 ]; then
+    echo "No branches to cleanup"
+    return
+  fi
 
-echo $BRANCHES | xargs -n 1 git branch -d
+  echo $BRANCHES | xargs -n 1 git branch -d
+}
+
+prune_remotes ()
+{
+  git remote | xargs -n 1 git remote prune
+}
+
+while getopts ":br" opt; do
+  case $opt in
+    b) prune_merged
+      ;;
+    r) prune_remotes
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
 
