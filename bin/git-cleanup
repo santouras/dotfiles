@@ -1,18 +1,21 @@
 #!/bin/bash
 
-# Removes local branches that have been merged into master
+# -b Removes local branches that have been merged into the current branch
+# -r Cleanups all remotes
+# -x Rebases against tracking branch
+# -f Checks out master, fetch and ff, then prune merged and remotes
 # @author Jude Aakjaer
 
 prune_merged ()
 {
-  BRANCHES=$(git branch --merged | grep -v "\*")
+  branches=$(git branch --merged | grep -v "\*")
 
   if [ $? -ne 0 ]; then
     echo "No branches to cleanup"
     return
   fi
 
-  echo $BRANCHES | xargs -n 1 git branch -d
+  echo $branches | xargs -n 1 git branch -d
 }
 
 prune_remotes ()
@@ -20,8 +23,26 @@ prune_remotes ()
   git remote | xargs -n 1 git remote prune
 }
 
-while getopts ":br" opt; do
+rebase_against_tracking ()
+{
+  remote_ref=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})
+  remote_branch="${remote_ref#remotes/}"
+  git fetch
+  git rebase $remote_branch
+}
+
+while getopts ":xbrf" opt; do
   case $opt in
+    x)
+      rebase_against_tracking
+      ;;
+    f)
+      git checkout master
+      git fetch
+      git ff
+      prune_merged
+      prune_remotes
+      ;;
     b) prune_merged
       ;;
     r) prune_remotes
