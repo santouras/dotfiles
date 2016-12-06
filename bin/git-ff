@@ -12,14 +12,11 @@ fi
 local_ref=$(git symbolic-ref -q HEAD)
 local_branch="${local_ref#refs/heads/}"
 
-remote_ref=$(git config "branch.$local_branch.merge")
-remote_branch="${remote_ref#refs/heads/}"
+remote_branch=$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))
 
-remote=$(git config "branch.$local_branch.remote")
-
-if [ -z $remote_branch ] || [ -z $remote ]; then
+if [ -z $remote_branch ]; then
   echo "Local branch '$local_branch' not tracked against a remote."
   exit 1
 fi
 
-git merge --ff-only ${remote}/${remote_branch}
+git merge --ff-only ${remote_branch}

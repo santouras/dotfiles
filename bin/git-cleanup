@@ -25,8 +25,11 @@ prune_remotes ()
 
 rebase_against_tracking ()
 {
-  remote_ref=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})
-  remote_branch="${remote_ref#remotes/}"
+  remote_branch=$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))
+  if [ -z $remote_branch ]; then
+    echo "No remote tracking branch"
+    return
+  fi
   git fetch
   git rebase $remote_branch
 }
