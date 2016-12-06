@@ -44,6 +44,9 @@ syntax enable
 " open NERDtree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
+" NERDtree to show hidden files by default
+let g:NERDTreeShowHidden=1
+
 " Needed for airline to show the status bar
 set laststatus=2
 
