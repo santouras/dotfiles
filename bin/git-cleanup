@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Removes local branches that have been merged into master
+# @author Jude Aakjaer
+
+BRANCHES=$(git branch --merged | grep -v "\*")
+
+if [ $? -ne 0 ]; then
+  echo "No branches to cleanup"
+  exit 0
+fi
+
+echo $BRANCHES | xargs -n 1 git branch -d
+
