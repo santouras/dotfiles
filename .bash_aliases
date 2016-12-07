@@ -1,3 +1,6 @@
+# use neovim
+alias vim='nvim'
+
 # docker things
 alias d='docker'
 alias dc='docker-compose'

@@ -136,7 +136,9 @@ set mouse=a
 
 " Resize split panes with mouse within tmux.
 " Also get live-updated text selection with mouse drag.
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 " fzf integration
 map <c-p> :FZF<CR>
