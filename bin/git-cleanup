@@ -32,6 +32,11 @@ rebase_against_origin_master ()
 
 rebase_against_branched ()
 {
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+  if [ $current_branch == "master" ]; then
+    echo "Already on master"
+    return
+  fi
   git rebase -i $(git merge-base HEAD master)
 }
 
