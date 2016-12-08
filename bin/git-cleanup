@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# -b Removes local branches that have been merged into the current branch
+# -m Removes local branches that have been merged into the current branch
+# -b Rebases against where current branch diverged from master
 # -r Cleanups all remotes
 # -x Rebases against tracking branch
 # -a Checks out master, fetch and ff, then prune merged and remotes
 # @author Jude Aakjaer
 
-prune_merged ()
+prune_merged_branches ()
 {
   branches=$(git branch --merged | grep -v "\*")
 
@@ -29,7 +30,12 @@ rebase_against_origin_master ()
   git rebase origin/master
 }
 
-while getopts ":xbra" opt; do
+rebase_against_branched ()
+{
+  git rebase -i $(git merge-base HEAD master)
+}
+
+while getopts ":xbram" opt; do
   case $opt in
     x)
       rebase_against_origin_master
@@ -38,12 +44,14 @@ while getopts ":xbra" opt; do
       git checkout master
       git fetch
       git ff
-      prune_merged
+      prune_merged_branches
       prune_remotes
       ;;
-    b) prune_merged
+    m) prune_merged_branches
       ;;
     r) prune_remotes
+      ;;
+    b) rebase_against_branched
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
