@@ -3,7 +3,7 @@
 # -m Removes local branches that have been merged into the current branch
 # -b Rebases against where current branch diverged from master
 # -r Cleanups all remotes
-# -x Rebases against tracking branch
+# -x Rebases against origin/master
 # -a Checks out master, fetch and ff, then prune merged and remotes
 # @author Jude Aakjaer
 
@@ -27,7 +27,14 @@ prune_remotes ()
 rebase_against_origin_master ()
 {
   git fetch origin
+
+  local did_stash=$(stash_if_unstaged)
+
   git rebase origin/master
+
+  if [ $did_stash -ne 0 ]; then
+    git stash pop --quiet
+  fi
 }
 
 rebase_against_branched ()
@@ -37,7 +44,23 @@ rebase_against_branched ()
     echo "Already on master"
     return
   fi
+  local did_stash=$(stash_if_unstaged)
+
   git rebase -i $(git merge-base HEAD master)
+
+  if [ $did_stash -ne 0 ]; then
+    git stash pop --quiet
+  fi
+}
+
+stash_if_unstaged ()
+{
+  git diff-index --quiet HEAD --
+  local needs_stash=$?
+  if [ $needs_stash -ne 0 ]; then
+    git stash save -u --quiet
+  fi
+  echo $needs_stash
 }
 
 while getopts ":xbram" opt; do
