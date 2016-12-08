@@ -86,6 +86,9 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 hi WhiteSpaces gui=undercurl guifg=LightGray
 match WhiteSpaces / \+/
 
+" allow copy paste to clipboard
+set clipboard=unnamed
+
 " reload files
 set autoread
 
