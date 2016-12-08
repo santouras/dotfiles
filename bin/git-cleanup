@@ -3,7 +3,7 @@
 # -b Removes local branches that have been merged into the current branch
 # -r Cleanups all remotes
 # -x Rebases against tracking branch
-# -f Checks out master, fetch and ff, then prune merged and remotes
+# -a Checks out master, fetch and ff, then prune merged and remotes
 # @author Jude Aakjaer
 
 prune_merged ()
@@ -23,23 +23,18 @@ prune_remotes ()
   git remote | xargs -n 1 git remote prune
 }
 
-rebase_against_tracking ()
+rebase_against_origin_master ()
 {
-  remote_branch=$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))
-  if [ -z $remote_branch ]; then
-    echo "No remote tracking branch"
-    return
-  fi
-  git fetch
-  git rebase $remote_branch
+  git fetch origin
+  git rebase origin/master
 }
 
-while getopts ":xbrf" opt; do
+while getopts ":xbra" opt; do
   case $opt in
     x)
-      rebase_against_tracking
+      rebase_against_origin_master
       ;;
-    f)
+    a)
       git checkout master
       git fetch
       git ff
