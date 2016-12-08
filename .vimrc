@@ -22,6 +22,8 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-commentary'
 
+Plugin 'tpope/vim-unimpaired'
+
 Plugin 'mileszs/ack.vim'
 
 Plugin 'matze/vim-move'
