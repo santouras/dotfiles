@@ -25,3 +25,6 @@
   path = ~/.gitconfig_local
 [commit]
   gpgsign = true
+[rerere]
+  enabled = true
+  autoupdate = true
