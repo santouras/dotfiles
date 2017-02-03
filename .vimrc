@@ -43,6 +43,9 @@ filetype plugin indent on    " required
 
 syntax enable
 
+" close current buffer w/o destroying split
+nnoremap <C-c> :bp\|bd #<CR>
+
 " open NERDtree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
