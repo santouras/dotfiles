@@ -13,7 +13,7 @@ if [ -f ~/.shell_local ];then
   . ~/.shell_local
 fi
 
-export PATH=~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/mysql/bin:$PATH
 # envswitch
 if command -v envswitch > /dev/null
 then
@@ -27,9 +27,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # rbenv
 if [ -d ~/.rbenv ]
 then
-  export PATH=~/.rbenv/shims:~/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
-  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
 
 # FZF

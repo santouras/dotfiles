@@ -19,6 +19,7 @@
   df = diff
   lg = log -p
   who = shortlog -s --
+  quick-stats = ! /Users/jaakjaer/bin/git-quick-stats
 [push]
   default = current
 [include]
