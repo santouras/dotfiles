@@ -1,7 +1,6 @@
 [user]
   name = Jude Aakjaer
   email = santouras@gmail.com
-  signingkey = 9D04A05727BB8F6F
 [core]
   excludesfile = ~/.gitignore_global
 [color]
@@ -19,13 +18,11 @@
   df = diff
   lg = log -p
   who = shortlog -s --
-  quick-stats = ! /Users/jaakjaer/bin/git-quick-stats
 [push]
   default = current
 [include]
   path = ~/.gitconfig_local
 [commit]
-  gpgsign = true
   verbose = true
 [rerere]
   enabled = true
