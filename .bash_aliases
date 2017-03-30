@@ -23,10 +23,10 @@ alias finddot='find . -name "._*"'
 alias killdot='finddot -print0 | xargs -0 rm'
 
 if [ "$OS" = "LINUX" ]; then
-	# colour 
-	alias ls='ls --color'
+  # colour
+  alias ls='ls --color'
 else
-	#sets up proper alias commands when called
-	alias ls='ls -G'
+  #sets up proper alias commands when called
+  alias ls='ls -G'
 fi
 
