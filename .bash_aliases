@@ -1,5 +1,6 @@
 # use neovim
 alias vim='nvim'
+alias v='vim'
 
 # docker things
 alias d='docker'
