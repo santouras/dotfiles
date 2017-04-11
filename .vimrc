@@ -32,6 +32,8 @@ Plugin 'airblade/vim-gitgutter'
 
 Plugin 'ekalinin/Dockerfile.vim'
 
+Plugin 'hashivim/vim-terraform'
+
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 
