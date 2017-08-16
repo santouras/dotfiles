@@ -80,7 +80,7 @@ set t_Co=256
 let base16colorspace=256  " Access colors present in 256 colorspace
 
 " set the colour scheme
-colorscheme base16-default-dark
+colorscheme base16-ocean
 set background=dark
 
 " Highlight our whitespace
