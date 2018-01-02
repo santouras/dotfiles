@@ -11,6 +11,9 @@ alias dbr='db rake'
 alias dt='dcr -e "RAILS_ENV=test" -e "RACK_ENV=test" web bundle exec rspec'
 de () { d exec -ti $(dc ps -q "$1") "${@:2}"; }
 
+# kube stuff
+alias kb='kubectl'
+
 # rails shiz
 alias be='bundle exec'
 alias bi='bundle install'
