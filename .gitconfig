@@ -33,3 +33,5 @@
   ff = only
 [rebase]
   autosquash = true
+[includeIf "gitdir:~/Code"]
+  path = ~/.gitconfig_zendesk
