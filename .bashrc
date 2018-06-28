@@ -34,4 +34,5 @@ if [ "$OS" = "OSX" ]; then
 fi
 
 
+[ -f ~/google-cloud-sdk/path.bash.inc ] && source ~/google-cloud-sdk/path.bash.inc
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

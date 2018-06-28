@@ -71,4 +71,5 @@ bindkey '^ ' autosuggest-accept
 # use bash style ctrl+u
 bindkey \^U backward-kill-line
 
+[ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
