@@ -20,7 +20,7 @@ alias bi='bundle install'
 alias br='be rake'
 alias bs='be rspec'
 
-alias ll='ls -hl'
+alias ll='ls -hla'
 
 # find dotfiles
 alias finddot='find . -name "._*"'
