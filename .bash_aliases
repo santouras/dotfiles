@@ -34,3 +34,4 @@ else
   alias ls='ls -G'
 fi
 
+alias ag='ag --color-match="31"'
