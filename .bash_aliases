@@ -35,3 +35,4 @@ else
 fi
 
 alias ag='ag --color-match="31"'
+alias tree='tree -C'
