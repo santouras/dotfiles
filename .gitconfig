@@ -34,5 +34,7 @@
 [rebase]
   autosquash = true
   autostash = true
+[includeIf "gitdir:~/gowork/src/github.com/zendesk"]
+  path = ~/.gitconfig_zendesk
 [includeIf "gitdir:~/Code"]
   path = ~/.gitconfig_zendesk
