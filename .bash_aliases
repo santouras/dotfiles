@@ -36,3 +36,7 @@ fi
 
 alias ag='ag --color-match="31"'
 alias tree='tree -C'
+
+alias cat='bat'
+alias ping='prettyping'
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"

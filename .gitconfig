@@ -5,6 +5,7 @@
   email = santouras@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
   ui = true
 [alias]
