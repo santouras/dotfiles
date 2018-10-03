@@ -8,7 +8,7 @@ alias dc='docker-compose'
 alias dcr='dc run --rm'
 alias db='dcr web bundle exec'
 alias dbr='db rake'
-alias dt='dcr -e "RAILS_ENV=test" -e "RACK_ENV=test" web bundle exec rspec'
+alias dt='dcr -e "RAILS_ENV=test" -e "RACK_ENV=test" web bundle exec'
 de () { d exec -ti $(dc ps -q "$1") "${@:2}"; }
 
 # kube stuff
