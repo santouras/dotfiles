@@ -40,3 +40,5 @@ alias tree='tree -C'
 alias cat='bat'
 alias ping='prettyping'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+alias brewupdate="brew update -v;noti -t 'brew' -m 'Updated brew'; brew upgrade -v; brew cask upgrade -v;noti -m 'brew' -t 'Upgraded brew'"
