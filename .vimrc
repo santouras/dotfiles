@@ -10,7 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'chriskempson/base16-vim'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 
 Plugin 'vim-airline/vim-airline-themes'
 
