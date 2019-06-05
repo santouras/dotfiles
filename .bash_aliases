@@ -20,7 +20,6 @@ alias bi='bundle install'
 alias br='be rake'
 alias bs='be rspec'
 
-alias ll='ls -hla'
 
 # find dotfiles
 alias finddot='find . -name "._*"'
@@ -31,9 +30,10 @@ if [ "$OS" = "LINUX" ]; then
   alias ls='ls --color'
 else
   #sets up proper alias commands when called
-  alias ls='ls -G'
+  alias ls='lsd'
 fi
 
+alias ll='ls -hla'
 alias ag='ag --color-match="31"'
 alias tree='tree -C'
 
