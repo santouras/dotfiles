@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 begin
-  require "pry"
+  require 'pry'
   Pry.start
   exit
 rescue LoadError => e
-  warn "=> Unable to load pry"
+  warn '=> Unable to load pry'
 end
