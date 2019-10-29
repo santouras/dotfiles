@@ -30,6 +30,14 @@ then
   eval "$(rbenv init -)"
 fi
 
+# nvm
+if [ -d ~/.nvm ]
+then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+fi
+
 # FZF
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
