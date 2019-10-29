@@ -39,3 +39,5 @@
   path = ~/.gitconfig_zendesk
 [includeIf "gitdir:~/Code/"]
   path = ~/.gitconfig_zendesk
+[diff]
+	noprefix = true
