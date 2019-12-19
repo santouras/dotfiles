@@ -8,11 +8,6 @@ esac
 
 export EDITOR=vim
 
-# if we have something special to this machine
-if [ -f ~/.shell_local ];then
-  . ~/.shell_local
-fi
-
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/mysql/bin:$PATH
 # envswitch
 if command -v envswitch > /dev/null
@@ -44,4 +39,9 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # GBT
 if [ -f ~/gbt.sh ];then
   . ~/gbt.sh
+fi
+
+# if we have something special to this machine
+if [ -f ~/.shell_local ];then
+  . ~/.shell_local
 fi
