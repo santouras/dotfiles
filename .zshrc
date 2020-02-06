@@ -68,6 +68,7 @@ unsetopt correct_all
 # zsh-autosuggestions autocomplete, cmd+space
 bindkey '^ ' autosuggest-accept
 
+
 # use bash style ctrl+u
 bindkey \^U backward-kill-line
 
