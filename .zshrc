@@ -65,7 +65,7 @@ fi
 unsetopt correct
 unsetopt correct_all
 
-# zsh-autosuggestions autocomplete, cmd+space
+# zsh-autosuggestions autocomplete, ctrl+space
 bindkey '^ ' autosuggest-accept
 
 # use bash style ctrl+u
