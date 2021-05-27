@@ -45,3 +45,9 @@ fi
 if [ -f ~/.shell_local ];then
   . ~/.shell_local
 fi
+
+
+# AWS CLI settings
+export AWS_PAGER=
+export AWS_CLI_AUTO_PROMPT=on-partial
+

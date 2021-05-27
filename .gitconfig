@@ -40,4 +40,6 @@
 [includeIf "gitdir:~/Code/"]
   path = ~/.gitconfig_zendesk
 [diff]
-	noprefix = true
+	noprefix = false
+[init]
+	defaultBranch = main

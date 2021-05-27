@@ -12,7 +12,7 @@ alias dt='dcr -e "RAILS_ENV=test" -e "RACK_ENV=test" web bundle exec'
 de () { d exec -ti $(dc ps -q "$1") "${@:2}"; }
 
 # kube stuff
-alias kb='kubectl'
+alias kc='kubectl'
 
 # rails shiz
 alias be='bundle exec'
@@ -41,4 +41,4 @@ alias cat='bat'
 alias ping='prettyping'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
-alias brewupdate="brew update -v;noti -t 'brew' -m 'Updated brew'; brew upgrade -v; brew cask upgrade -v;noti -m 'brew' -t 'Upgraded brew'"
+alias brewupdate="brew update -v;noti -t 'brew' -m 'Updated brew'; brew upgrade -v; brew upgrade --cask;noti -m 'brew' -t 'Upgraded brew'"
