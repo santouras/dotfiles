@@ -56,11 +56,6 @@ source ~/.shell_common
 
 source ~/.bash_aliases
 
-# include some things if found locally
-if [ -f ~/.bash_local ]; then
-  . ~/.bash_local
-fi
-
 # autocorrect is killing me
 unsetopt correct
 unsetopt correct_all
@@ -71,5 +66,10 @@ bindkey '^ ' autosuggest-accept
 # use bash style ctrl+u
 bindkey \^U backward-kill-line
 
-[ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
+if [[ ! "$PATH" == */google-cloud-sdk/* ]]; then
+  [ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
+  [ -f ~/google-cloud-sdk/completion.zsh.inc ] && source ~/google-cloud-sdk/completion.zsh.inc
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

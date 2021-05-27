@@ -8,7 +8,10 @@ esac
 
 export EDITOR=vim
 
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/mysql/bin:$PATH
+if [[ ! "$PATH" == *~/bin* ]];then
+  export PATH=~/bin:$PATH
+fi
+
 # envswitch
 if command -v envswitch > /dev/null
 then
@@ -20,18 +23,23 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # rbenv
-if [ -d ~/.rbenv ]
-then
-  eval "$(rbenv init -)"
+if [[ ! "$PATH" == *rbenv* ]]; then
+  if [ -d ~/.rbenv ]
+  then
+    eval "$(rbenv init -)"
+  fi
 fi
 
 # nvm
-if [ -d ~/.nvm ]
-then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+if [[ ! "$PATH" == *nvm* ]]; then
+  if [ -d ~/.nvm ]
+  then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+  fi
 fi
+
 
 # FZF
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
@@ -50,4 +58,3 @@ fi
 # AWS CLI settings
 export AWS_PAGER=
 export AWS_CLI_AUTO_PROMPT=on-partial
-
