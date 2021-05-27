@@ -30,7 +30,7 @@ rebase_against_origin_master ()
 
   local did_stash=$(stash_if_unstaged)
 
-  git rebase origin/master
+  git rebase origin/${MAIN_BRANCH}
 
   if [ $did_stash -ne 0 ]; then
     git stash pop --quiet
@@ -40,13 +40,13 @@ rebase_against_origin_master ()
 rebase_against_branched ()
 {
   current_branch=$(git rev-parse --abbrev-ref HEAD)
-  if [ $current_branch == "master" ]; then
-    echo "Already on master"
+  if [ $current_branch == $MAIN_BRANCH ]; then
+    echo "Already on ${MAIN_BRANCH}"
     return
   fi
   local did_stash=$(stash_if_unstaged)
 
-  git rebase -i $(git merge-base HEAD master)
+  git rebase -i $(git merge-base HEAD $MAIN_BRANCH)
 
   if [ $did_stash -ne 0 ]; then
     git stash pop --quiet
@@ -63,13 +63,25 @@ stash_if_unstaged ()
   echo $needs_stash
 }
 
+function has_main_branch ()
+{
+  git branch --list | grep main > /dev/null
+  return $?
+}
+
+if has_main_branch ; then
+  MAIN_BRANCH="main"
+else
+  MAIN_BRANCH="master"
+fi
+
 while getopts ":xbram" opt; do
   case $opt in
     x)
       rebase_against_origin_master
       ;;
     a)
-      git checkout master
+      git checkout $MAIN_BRANCH
       git fetch
       git ff
       prune_merged_branches
