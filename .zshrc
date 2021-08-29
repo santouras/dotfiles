@@ -67,8 +67,8 @@ bindkey '^ ' autosuggest-accept
 bindkey \^U backward-kill-line
 
 if [[ ! "$PATH" == */google-cloud-sdk/* ]]; then
-  [ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
-  [ -f ~/google-cloud-sdk/completion.zsh.inc ] && source ~/google-cloud-sdk/completion.zsh.inc
+  [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ] && source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+  [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc ] && source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
