@@ -8,6 +8,11 @@ export LANG=en_US.UTF-8
 # Set zsh to use xterm
 export TERM=xterm-256color
 
+# Add in homebrew site functions
+if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
+  FPATH=/usr/local/share/zsh/site-functions:$FPATH
+fi
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
