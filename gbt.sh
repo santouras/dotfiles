@@ -12,7 +12,7 @@ export GBT_CAR_CUSTOM1_BG='light_red'
 export GBT_CAR_CUSTOM1_TEXT_FG='black'
 export GBT_CAR_CUSTOM1_FORMAT=' 💎 {{ Text }} '
 
-export GBT_RCARS='Custom1, Custom, Kubectl'
+export GBT_RCARS='Custom, Custom1, Kubectl'
 
 export GBT_CAR_STATUS_FORMAT=' {{ Symbol }} {{ Code }} '
 
