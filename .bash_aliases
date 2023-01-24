@@ -4,7 +4,7 @@ alias v='vim'
 
 # docker things
 alias d='docker'
-alias dc='docker-compose'
+alias dc='d compose'
 alias dcr='dc run --rm'
 alias db='dcr web bundle exec'
 alias dbr='db rake'
