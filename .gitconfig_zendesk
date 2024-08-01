@@ -2,4 +2,4 @@
   name = Jude Aakjaer
   email = jaakjaer@zendesk.com
 [core]
-  hooksPath = ~/Code/hooks
+  hooksPath = ~/Code/zendesk/git-hooks

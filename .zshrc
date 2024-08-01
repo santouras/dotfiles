@@ -44,7 +44,7 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,4 +77,3 @@ if [[ ! "$PATH" == */google-cloud-sdk/* ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-

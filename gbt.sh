@@ -1,6 +1,10 @@
 PROMPT='$(gbt $?)'
 RPROMPT='$(gbt -right)'
 
+# TMP
+# Issue with fonts and changing osx unicode character
+export GBT_CAR_OS_FORMAT="  "
+
 # custom right cars, golang & ruby version
 export GBT_CAR_CUSTOM_TEXT_CMD="goenv version-name"
 export GBT_CAR_CUSTOM_BG='light_blue'

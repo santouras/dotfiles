@@ -8,7 +8,13 @@ esac
 
 export EDITOR=vim
 
-if [[ ! "$PATH" == *~/bin* ]];then
+if [[ ! "$PATH" == *opt/homebrew/bin* ]]; then
+  if [ -f /opt/homebrew/bin/brew ];then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
+fi
+
+if [[ ! "$PATH" == *Users/jaakjaer/bin* ]];then
   export PATH=~/bin:$PATH
 fi
 
@@ -19,8 +25,10 @@ then
 fi
 
 # BASE16 SHELL
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        source "$BASE16_SHELL/profile_helper.sh"
 
 # rbenv
 if [[ ! "$PATH" == *rbenv* ]]; then
@@ -38,13 +46,23 @@ if [[ ! "$PATH" == *goenv* ]]; then
   fi
 fi
 
+# jenv
+if [[ ! "$PATH" == *jenv* ]]; then
+  if [ -d ~/.jenv ]
+  then
+    export PATH="$HOME/.jenv/bin:$PATH"
+    eval "$(jenv init -)"
+  fi
+fi
+
 # nvm
 if [[ ! "$PATH" == *nvm* ]]; then
   if [ -d ~/.nvm ]
   then
     export NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+    nvm_brew=$(brew --prefix nvm)
+    [ -s "${nvm_brew}/nvm.sh" ] && . "${nvm_brew}/nvm.sh"  # This loads nvm
+    [ -s "${nvm_brew}/etc/bash_completion" ] && . "${nvm_dir}/etc/bash_completion"  # This loads nvm bash_completion
   fi
 fi
 
